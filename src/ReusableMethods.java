@@ -169,18 +169,28 @@ public class ReusableMethods {
 			System.out.println("Expected count: "+expectedCount + ", Actual count: " + actualCount);
 		}
 		
+		
 		public static void verifyProductInCart(WebDriver driver, String expectedProduct) {
-			String count = getCartCount(driver);
-			List<WebElement> actualProducts = driver.findElements(By.className("inventory_item_name"));
-			if(actualProducts.equals(expectedProduct)) {
-				
+			//int cartCount = Integer.parseInt(ReusableMethods.getCartCount(driver).trim());
+			List <WebElement> items = driver.findElements(By.className("inventory_item_name"));
+			boolean isProduct = false;
+			for(WebElement actualProduct : items) {
+				System.out.println(actualProduct.getText());
+				if (actualProduct.getText().equals(expectedProduct)) {
+					isProduct = true;
+					break;
+				}
 			}
-			for() {
-				
+			if(isProduct) {
+				System.out.println("product matched");
+			}
+			else {
+				System.out.println("Product not matched");
 			}
 		}
 		
-
+		
+		
 
 }
 	
