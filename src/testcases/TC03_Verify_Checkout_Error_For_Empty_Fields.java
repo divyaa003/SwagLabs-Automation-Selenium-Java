@@ -1,8 +1,11 @@
+package testcases;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 
-public class TestCase03 {
+import utilities.ReusableMethods;
+
+public class TC03_Verify_Checkout_Error_For_Empty_Fields {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub

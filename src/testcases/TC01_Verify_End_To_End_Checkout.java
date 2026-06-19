@@ -1,7 +1,9 @@
+package testcases;
+import utilities.ReusableMethods;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 
-public class TestCase01 {
+public class TC01_Verify_End_To_End_Checkout {
 
 		public static void main(String[] args) {
 			WebDriver driver = new ChromeDriver();

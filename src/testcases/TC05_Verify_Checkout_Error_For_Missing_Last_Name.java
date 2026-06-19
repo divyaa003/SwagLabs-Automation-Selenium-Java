@@ -1,7 +1,11 @@
+package testcases;
 import org.openqa.selenium.WebDriver;
+
 import org.openqa.selenium.chrome.ChromeDriver;
 
-public class TestCase04 {
+import utilities.ReusableMethods;
+
+public class TC05_Verify_Checkout_Error_For_Missing_Last_Name {
 
 	public static void main(String[] args) {
 		WebDriver driver = new ChromeDriver();
@@ -17,7 +21,7 @@ public class TestCase04 {
 		ReusableMethods.openCart(driver);
 		
 		//checkout without first name
-//		ReusableMethods.verifyCheckoutWithoutFirstName(driver);
+//		ReusableMethods.verifyCheckoutWithoutLastName(driver);
 		
 		driver.quit();
 		

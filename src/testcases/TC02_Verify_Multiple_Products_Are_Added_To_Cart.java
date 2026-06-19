@@ -1,7 +1,9 @@
+package testcases;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import utilities.ReusableMethods;
 
-public class TestCase02 {
+public class TC02_Verify_Multiple_Products_Are_Added_To_Cart {
 
 	public static void main(String[] args) throws InterruptedException {
 		// TODO Auto-generated method stub

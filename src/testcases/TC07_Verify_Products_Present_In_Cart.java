@@ -1,7 +1,11 @@
+package testcases;
 import org.openqa.selenium.WebDriver;
+
 import org.openqa.selenium.chrome.ChromeDriver;
 
-public class TestCase07 {
+import utilities.ReusableMethods;
+
+public class TC07_Verify_Products_Present_In_Cart {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
@@ -15,6 +19,7 @@ public class TestCase07 {
 		ReusableMethods.openCart(driver);
 		ReusableMethods.verifyProductInCart(driver, "Sauce Labs Backpack");
 		ReusableMethods.verifyProductInCart(driver, "Sauce Labs Bike Light");
+		ReusableMethods.verifyProductInCart(driver, "Sauce Labs Fleece Jacket");
 		
 //		ReusableMethods.addProductToCart(driver, "sauce-labs-bike-light");
 //		ReusableMethods.openCart(driver);

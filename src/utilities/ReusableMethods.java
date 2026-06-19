@@ -1,7 +1,7 @@
+package utilities;
 import java.util.List;
 
 import org.openqa.selenium.By;
-import org.openqa.selenium.Dimension;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 
@@ -20,7 +20,7 @@ public class ReusableMethods {
 				System.out.println("Login not success :(");
 			}
 		}
-		
+
 		//Cart count
 		public static String getCartCount(WebDriver driver) {
 			return driver.findElement(By.className("shopping_cart_badge")).getText();
@@ -175,17 +175,16 @@ public class ReusableMethods {
 			List <WebElement> items = driver.findElements(By.className("inventory_item_name"));
 			boolean isProduct = false;
 			for(WebElement actualProduct : items) {
-				System.out.println(actualProduct.getText());
 				if (actualProduct.getText().equals(expectedProduct)) {
 					isProduct = true;
 					break;
 				}
 			}
 			if(isProduct) {
-				System.out.println("product matched");
+				System.out.println(expectedProduct +" is present in cart");
 			}
 			else {
-				System.out.println("Product not matched");
+				System.out.println(expectedProduct + " is not present in cart");
 			}
 		}
 		
