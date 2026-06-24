@@ -25,13 +25,13 @@ public class TC10_VerifyMultipleProducts_Dynamically {
 		
 		ReusableMethods.openCart(driver);
 		
-		String[] productNames = {
+		String[] expectedNames = {
 				"Sauce Labs Backpack",
 				"Sauce Labs Bike Light",
 				"Sauce Labs Bolt T-Shirt"
 		};
 		
-		ReusableMethods.verifyMultipleProducts(driver, productNames, "inventory_item_name");
+		ReusableMethods.verifyMultipleProducts(driver, expectedNames);
 		
 		driver.quit();
 		

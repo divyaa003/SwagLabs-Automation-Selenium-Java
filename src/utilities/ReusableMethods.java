@@ -130,6 +130,14 @@ public class ReusableMethods {
 			System.out.println(expectedProduct + " is not present in cart");
 		}
 	}
+	
+	//Verifying multiple products dynamically [Its a powerful logic 🔥]
+	public static void verifyMultipleProducts(WebDriver driver, String[] expectedProducts) {
+		for(String product : expectedProducts) {
+			verifyProductInCart(driver, product);
+		}
+	}
+	
 
 	// =========================================
 	// CHECKOUT METHODS
@@ -256,14 +264,47 @@ public class ReusableMethods {
 		System.out.println("Items added to cart. cart count: "+getCartCount(driver));
 	}
 	
-	//Verifying product in cart dynamically
-	public static void verifyMultipleProducts(WebDriver driver, String[] productNames, String common) {
-		
-		for() {
-			
-		
+	//remove multiple products dynamically
+	public static void removeMultipleProducts(WebDriver driver, String[] removeProducts) {
+		for(String product : removeProducts) {
+			driver.findElement(By.id("remove-"+product)).click();
+			System.out.println(product + " Item removed");
+		}
+		System.out.println("Items removed. Cart count: "+getCartCount(driver));
+	}
+	
+	public static void verifyProductNotInCart(WebDriver driver, String expectedProduct) {
+
+		List<WebElement> items =
+				driver.findElements(By.className("inventory_item_name"));
+
+		boolean isProduct = false;
+
+		for (WebElement actualProduct : items) {
+
+			if (actualProduct.getText().equals(expectedProduct)) {
+				isProduct = true;
+				break;
+			}
+		}
+
+		if (isProduct) {
+			System.out.println(expectedProduct + " is present in cart");
+		} else {
+			System.out.println(expectedProduct + " is removed from cart");
 		}
 	}
+	
+	public static void verifyMultipleProductsNotInCart(WebDriver driver, String[] productsToBeRemoved) {
+		for(String product : productsToBeRemoved) {
+			verifyProductNotInCart(driver, product);
+		}
+	}
+	
+	public static void verifyCartProductsPresent(WebDriver driver, String Product) {
+		verifyProductInCart(driver, Product);
+	}
+	
 	
 }
 
